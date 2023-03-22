@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B6F5E39429CAC3E9001B7F27 /* StoreSearchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E39329CAC3E9001B7F27 /* StoreSearchAppApp.swift */; };
-		B6F5E39629CAC3E9001B7F27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E39529CAC3E9001B7F27 /* ContentView.swift */; };
 		B6F5E39829CAC3EB001B7F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F5E39729CAC3EB001B7F27 /* Assets.xcassets */; };
 		B6F5E39B29CAC3EB001B7F27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F5E39A29CAC3EB001B7F27 /* Preview Assets.xcassets */; };
 		B6F5E3A529CAC3EB001B7F27 /* StoreSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3A429CAC3EB001B7F27 /* StoreSearchAppTests.swift */; };
 		B6F5E3AF29CAC3EB001B7F27 /* StoreSearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3AE29CAC3EB001B7F27 /* StoreSearchAppUITests.swift */; };
 		B6F5E3B129CAC3EB001B7F27 /* StoreSearchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3B029CAC3EB001B7F27 /* StoreSearchAppUITestsLaunchTests.swift */; };
+		B6F5E3BF29CAC46C001B7F27 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B6F5E3BE29CAC46C001B7F27 /* ComposableArchitecture */; };
+		B6F5E3C129CAC492001B7F27 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3C029CAC492001B7F27 /* SearchListView.swift */; };
+		B6F5E3C729CAD1A7001B7F27 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3C629CAD1A7001B7F27 /* DetailView.swift */; };
+		B6F5E3CB29CAD838001B7F27 /* SearchAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3CA29CAD838001B7F27 /* SearchAPIModel.swift */; };
+		B6F5E3CD29CAD95C001B7F27 /* SearchResultClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3CC29CAD95C001B7F27 /* SearchResultClient.swift */; };
+		B6F5E3D029CAEA86001B7F27 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B6F5E3CF29CAEA86001B7F27 /* Kingfisher */; };
+		B6F5E3D629CB204C001B7F27 /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = B6F5E3D529CB204C001B7F27 /* ExpandableText */; };
+		B6F5E3D829CB2110001B7F27 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3D729CB2110001B7F27 /* RatingView.swift */; };
+		B6F5E3DB29CB2D32001B7F27 /* RatingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3DA29CB2D32001B7F27 /* RatingViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +44,6 @@
 /* Begin PBXFileReference section */
 		B6F5E39029CAC3E9001B7F27 /* StoreSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F5E39329CAC3E9001B7F27 /* StoreSearchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchAppApp.swift; sourceTree = "<group>"; };
-		B6F5E39529CAC3E9001B7F27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6F5E39729CAC3EB001B7F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6F5E39A29CAC3EB001B7F27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6F5E3A029CAC3EB001B7F27 /* StoreSearchAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +51,12 @@
 		B6F5E3AA29CAC3EB001B7F27 /* StoreSearchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F5E3AE29CAC3EB001B7F27 /* StoreSearchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchAppUITests.swift; sourceTree = "<group>"; };
 		B6F5E3B029CAC3EB001B7F27 /* StoreSearchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B6F5E3C029CAC492001B7F27 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		B6F5E3C629CAD1A7001B7F27 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B6F5E3CA29CAD838001B7F27 /* SearchAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIModel.swift; sourceTree = "<group>"; };
+		B6F5E3CC29CAD95C001B7F27 /* SearchResultClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultClient.swift; sourceTree = "<group>"; };
+		B6F5E3D729CB2110001B7F27 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		B6F5E3DA29CB2D32001B7F27 /* RatingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F5E3D629CB204C001B7F27 /* ExpandableText in Frameworks */,
+				B6F5E3D029CAEA86001B7F27 /* Kingfisher in Frameworks */,
+				B6F5E3BF29CAC46C001B7F27 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +110,10 @@
 		B6F5E39229CAC3E9001B7F27 /* StoreSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6F5E3D129CAEA8A001B7F27 /* Common */,
+				B6F5E3C829CAD808001B7F27 /* Search */,
+				B6F5E3C929CAD811001B7F27 /* Detail */,
 				B6F5E39329CAC3E9001B7F27 /* StoreSearchAppApp.swift */,
-				B6F5E39529CAC3E9001B7F27 /* ContentView.swift */,
 				B6F5E39729CAC3EB001B7F27 /* Assets.xcassets */,
 				B6F5E39929CAC3EB001B7F27 /* Preview Content */,
 			);
@@ -114,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F5E3A429CAC3EB001B7F27 /* StoreSearchAppTests.swift */,
+				B6F5E3DA29CB2D32001B7F27 /* RatingViewTests.swift */,
 			);
 			path = StoreSearchAppTests;
 			sourceTree = "<group>";
@@ -127,6 +146,32 @@
 			path = StoreSearchAppUITests;
 			sourceTree = "<group>";
 		};
+		B6F5E3C829CAD808001B7F27 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5E3C029CAC492001B7F27 /* SearchListView.swift */,
+				B6F5E3CC29CAD95C001B7F27 /* SearchResultClient.swift */,
+				B6F5E3CA29CAD838001B7F27 /* SearchAPIModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B6F5E3C929CAD811001B7F27 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5E3C629CAD1A7001B7F27 /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B6F5E3D129CAEA8A001B7F27 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5E3D729CB2110001B7F27 /* RatingView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +182,18 @@
 				B6F5E38C29CAC3E9001B7F27 /* Sources */,
 				B6F5E38D29CAC3E9001B7F27 /* Frameworks */,
 				B6F5E38E29CAC3E9001B7F27 /* Resources */,
+				B6F5E3D929CB2A32001B7F27 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = StoreSearchApp;
+			packageProductDependencies = (
+				B6F5E3BE29CAC46C001B7F27 /* ComposableArchitecture */,
+				B6F5E3CF29CAEA86001B7F27 /* Kingfisher */,
+				B6F5E3D529CB204C001B7F27 /* ExpandableText */,
+			);
 			productName = StoreSearchApp;
 			productReference = B6F5E39029CAC3E9001B7F27 /* StoreSearchApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +266,11 @@
 				Base,
 			);
 			mainGroup = B6F5E38729CAC3E9001B7F27;
+			packageReferences = (
+				B6F5E3BD29CAC46C001B7F27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				B6F5E3CE29CAEA86001B7F27 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B6F5E3D429CB204C001B7F27 /* XCRemoteSwiftPackageReference "ExpandableText" */,
+			);
 			productRefGroup = B6F5E39129CAC3E9001B7F27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,13 +308,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B6F5E3D929CB2A32001B7F27 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"** SwiftLint 가 없네요, https://github.com/realm/SwiftLint 에서 설치해주세요(brew 가능)\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B6F5E38C29CAC3E9001B7F27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6F5E39629CAC3E9001B7F27 /* ContentView.swift in Sources */,
+				B6F5E3C129CAC492001B7F27 /* SearchListView.swift in Sources */,
+				B6F5E3C729CAD1A7001B7F27 /* DetailView.swift in Sources */,
+				B6F5E3CD29CAD95C001B7F27 /* SearchResultClient.swift in Sources */,
 				B6F5E39429CAC3E9001B7F27 /* StoreSearchAppApp.swift in Sources */,
+				B6F5E3D829CB2110001B7F27 /* RatingView.swift in Sources */,
+				B6F5E3CB29CAD838001B7F27 /* SearchAPIModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F5E3A529CAC3EB001B7F27 /* StoreSearchAppTests.swift in Sources */,
+				B6F5E3DB29CB2D32001B7F27 /* RatingViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +664,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B6F5E3BD29CAC46C001B7F27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		B6F5E3CE29CAEA86001B7F27 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		B6F5E3D429CB204C001B7F27 /* XCRemoteSwiftPackageReference "ExpandableText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/n3d1117/ExpandableText";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6F5E3BE29CAC46C001B7F27 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F5E3BD29CAC46C001B7F27 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		B6F5E3CF29CAEA86001B7F27 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F5E3CE29CAEA86001B7F27 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B6F5E3D529CB204C001B7F27 /* ExpandableText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F5E3D429CB204C001B7F27 /* XCRemoteSwiftPackageReference "ExpandableText" */;
+			productName = ExpandableText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6F5E38829CAC3E9001B7F27 /* Project object */;
 }
