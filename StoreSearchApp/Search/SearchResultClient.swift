@@ -16,6 +16,10 @@ struct SearchResult: Equatable, Sendable, Decodable, Identifiable {
     var title: String
     var averageUserRating: Double
     var screenshots: [URL]
+
+    var companyName: String
+    var releaseNotes: String
+    var description: String
 }
 
 extension SearchResult {
@@ -25,6 +29,9 @@ extension SearchResult {
         self.title = model.trackName
         self.averageUserRating = model.averageUserRatingForCurrentVersion
         self.screenshots = model.screenshotUrls.map { URL(string: $0) }.compactMap { $0 }
+        self.companyName = model.artistName
+        self.releaseNotes = model.releaseNotes
+        self.description = model.description
     }
 }
 
@@ -47,21 +54,7 @@ extension SearchResultClient: DependencyKey {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let response = try decoder.decode(SearchAPIResult.self, from: data)
-            return response.results.map { apiModel in
-                let trackId = apiModel.trackID
-                let appIconURL = URL(string: apiModel.artworkUrl512)
-                let ratingCount = apiModel.averageUserRatingForCurrentVersion
-                let title = apiModel.trackName
-                let screenshots = apiModel.screenshotUrls.map {
-                    URL(string: $0)
-                }.compactMap { $0 }
-
-                return SearchResult(id: trackId,
-                                    appIcon: appIconURL,
-                                    title: title,
-                                    averageUserRating: ratingCount,
-                                    screenshots: screenshots)
-            }
+            return response.results.map { SearchResult($0) }
         } catch let error {
             print(error)
             return []

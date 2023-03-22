@@ -71,11 +71,11 @@ struct SearchListView: View {
             NavigationView {
                 List {
                     ForEach(viewStore.searchedList) { item in
-                        Button(action: { viewStore.send(.searchResultTapped(item)) }) {
+                        NavigationLink(destination: DetailView(detail: item)) {
                             HStack {
-                                Image(systemName: "")
-                                Text(item.title)
-                                Text("\(item.averageUserRating)")
+                                Image(systemName: "magnifyingglass")
+                                Text(item.title).font(.headline)
+                                Text(item.companyName).font(.body)
                             }
                         }
                     }
