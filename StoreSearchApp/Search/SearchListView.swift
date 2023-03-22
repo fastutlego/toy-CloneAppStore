@@ -6,8 +6,25 @@
 //
 
 import SwiftUI
+import Foundation
 
 import ComposableArchitecture
+
+struct RecentSearchStore {
+    static let storedKey = "keyword"
+    static func loadList() -> [String] {
+        guard let searchList = UserDefaults.standard.stringArray(forKey: RecentSearchStore.storedKey)
+              else {
+            return []
+        }
+        return searchList
+    }
+
+    static func save(keywordList: [String])  {
+        UserDefaults.standard.set(keywordList,
+                                  forKey: RecentSearchStore.storedKey)
+    }
+}
 
 struct SearchFeature: ReducerProtocol {
     struct SearchState: Equatable {
@@ -15,15 +32,23 @@ struct SearchFeature: ReducerProtocol {
         var filteredData: [String] = []
         var data: [String] = []
         var searchedList: [SearchResult] = []
+        var keywordList: [String] = [] {
+            didSet {
+                RecentSearchStore.save(keywordList: keywordList)
+            }
+        }
         var currentPage = 1
+
+        init() {
+            keywordList = RecentSearchStore.loadList()
+        }
     }
 
     enum SearchAction: Equatable {
         case searchTextDidChanged(String)
         case searchTextChangeDebounced
-        case itemsUpdated([String])
         case searchResponse(TaskResult<[SearchResult]>)
-        case searchResultTapped(SearchResult)
+
     }
 
     @Dependency(\.searchResult) var searchResult
@@ -33,7 +58,6 @@ struct SearchFeature: ReducerProtocol {
         switch action {
         case let .searchTextDidChanged(text):
             state.searchText = text
-//            state.filteredData = state.data.filter { $0.lowercased().contains(text.lowercased()) }
             return .none
         case .searchTextChangeDebounced:
             guard state.searchText.isEmpty == false else {
@@ -43,18 +67,19 @@ struct SearchFeature: ReducerProtocol {
                 await .searchResponse(TaskResult { try await self.searchResult.fetch(query, 10, 1) })
             }
             .cancellable(id: SearchAppStoreID.self)
-        case let .itemsUpdated(items):
-            print(items)
-            state.filteredData = items
-            return .none
         case .searchResponse(.failure):
             state.data = []
             return .none
         case let .searchResponse(.success(response)):
             state.searchedList = response
+
+            let queryString = state.searchText
+            if !state.keywordList.contains(where: { $0 == queryString }) {
+                state.keywordList.append(state.searchText)
+            }
             return .none
-        case .searchResultTapped(_):
-            return .none
+
+
         }
 
     }
@@ -70,17 +95,25 @@ struct SearchListView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             NavigationView {
                 List {
-                    ForEach(viewStore.searchedList) { item in
-                        NavigationLink(destination: DetailView(detail: item)) {
-                            HStack {
-                                Image(systemName: "magnifyingglass")
-                                Text(item.title).font(.headline)
-                                Text(item.companyName).font(.body)
+                    if viewStore.keywordList.count > 0 &&
+                        viewStore.searchText.isEmpty {
+                        ForEach(viewStore.keywordList, id: \.self) { item in
+                            Button(action: { viewStore.send(.searchTextDidChanged(item)) }) {
+                                Text(item)
+                            }
+                        }
+                    } else {
+                        ForEach(viewStore.searchedList) { item in
+                            NavigationLink(destination: DetailView(detail: item)) {
+                                HStack {
+                                    Image(systemName: "magnifyingglass")
+                                    Text(item.title).font(.headline)
+                                    Text(item.companyName).font(.body)
+                                }
                             }
                         }
                     }
-                }
-                .searchable(text: viewStore.binding(
+                }.searchable(text: viewStore.binding(
                     get: { $0.searchText },
                     send: { .searchTextDidChanged($0) }))
                 .navigationTitle("검색")
@@ -94,6 +127,8 @@ struct SearchListView: View {
             }
         }
     }
+
+
 }
 
 struct ContentView: View {
@@ -106,35 +141,3 @@ struct ContentView: View {
         )
     }
 }
-
-
-//WithViewStore(store) { viewStore in
-//    NavigationView {
-//        List(viewStore.data, id: \.self) { item in
-//            NavigationLink(
-//                destination: Text(item),
-//                label: {
-//                    Text(item)
-//                }
-//            )
-//        }
-//        .searchable(text: viewStore.binding(
-//            get: { $0.searchText },
-//            send: .searchTextDidChanged($0.searchText))
-//        )
-//        .navigationTitle("My List")
-//    }
-//}
-
-//
-//struct SearchListView: View {
-//    var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//    }
-//}
-//
-//struct SearchListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchListView()
-//    }
-//}

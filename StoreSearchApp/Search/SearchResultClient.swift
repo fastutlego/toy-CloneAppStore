@@ -9,7 +9,7 @@ import Foundation
 
 import ComposableArchitecture
 
-struct SearchResult: Equatable, Sendable, Decodable, Identifiable {
+struct SearchResult: Equatable, Sendable, Codable, Identifiable {
     var id: Int
 
     var appIcon: URL?

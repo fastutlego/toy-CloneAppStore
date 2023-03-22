@@ -75,15 +75,3 @@ struct SearchAPIResult: Codable {
         }
     }
 }
-
-
-let CustomJsonDecoder: JSONDecoder = {
-  let decoder = JSONDecoder()
-  let formatter = DateFormatter()
-  formatter.calendar = Calendar(identifier: .iso8601)
-  formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-  formatter.timeZone = TimeZone(secondsFromGMT: 0)
-  formatter.locale = Locale(identifier: "en_US_POSIX")
-  decoder.dateDecodingStrategy = .formatted(formatter)
-  return decoder
-}()
