@@ -33,4 +33,20 @@ final class StoreSearchAppTests: XCTestCase {
         }
     }
 
+    func testSearchAPI() throws {
+        let expectation = expectation(description: "SearchAPI Testing")
+
+        Task {
+            let result = await SearchResultClient.fetchSearchList(query: "K", limit: 50, page: 1)
+            print(result)
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 30.0) { error in
+            print(error)
+        }
+    }
+
+    
+
 }
