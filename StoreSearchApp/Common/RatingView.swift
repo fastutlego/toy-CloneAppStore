@@ -29,13 +29,13 @@ struct RatingView: View {
             Text(String(format: "%.1f", rating)).font(.title.bold())
             Spacer().frame(height: 10)
             HStack(spacing: 0) {
-                ForEach(1..<fullStartCount+1, id: \.self) { number in
+                ForEach(1..<fullStartCount+1, id: \.self) { _ in
                     fillImage
                 }
-                ForEach(1..<halfStartCount+1, id: \.self) { number in
+                ForEach(1..<halfStartCount+1, id: \.self) { _ in
                     halfFillImage
                 }
-                ForEach(1..<emptyStarCount+1, id: \.self) { number in
+                ForEach(1..<emptyStarCount+1, id: \.self) { _ in
                     emptyImage
                 }
             }

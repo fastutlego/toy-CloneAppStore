@@ -35,10 +35,10 @@ struct DetailView: View {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
                         KFImage(detail.appIcon)
-                            .placeholder { Rectangle().fill(.gray.opacity(0.2))  }
+                            .placeholder { Rectangle().fill(.gray.opacity(0.2))   }
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height:100)
+                            .frame(width: 100, height: 100)
                             .cornerRadius(10)
 
                         VStack(alignment: .leading) {
@@ -56,7 +56,7 @@ struct DetailView: View {
                         }
                     }.padding()
                     Divider()
-                    HStack() {
+                    HStack {
                         RatingView(currentRating: detail.averageUserRating)
                             .foregroundColor(.gray)
                         Divider()
@@ -67,7 +67,7 @@ struct DetailView: View {
                         HStack {
                             ForEach(detail.screenshots, id: \.self) { url in
                                 KFImage(url)
-                                    .placeholder { Rectangle().fill(.gray.opacity(0.2))  }
+                                    .placeholder { Rectangle().fill(.gray.opacity(0.2))   }
                                     .cancelOnDisappear(true)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)

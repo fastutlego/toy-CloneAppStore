@@ -22,7 +22,6 @@
 		B6F5E3D629CB204C001B7F27 /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = B6F5E3D529CB204C001B7F27 /* ExpandableText */; };
 		B6F5E3D829CB2110001B7F27 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3D729CB2110001B7F27 /* RatingView.swift */; };
 		B6F5E3DB29CB2D32001B7F27 /* RatingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5E3DA29CB2D32001B7F27 /* RatingViewTests.swift */; };
-		B6F5E3DD29CB3901001B7F27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6F5E3DC29CB3901001B7F27 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		B6F5E3CC29CAD95C001B7F27 /* SearchResultClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultClient.swift; sourceTree = "<group>"; };
 		B6F5E3D729CB2110001B7F27 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B6F5E3DA29CB2D32001B7F27 /* RatingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewTests.swift; sourceTree = "<group>"; };
-		B6F5E3DC29CB3901001B7F27 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 		B6F5E38729CAC3E9001B7F27 = {
 			isa = PBXGroup;
 			children = (
-				B6F5E3DC29CB3901001B7F27 /* README.md */,
 				B6F5E39229CAC3E9001B7F27 /* StoreSearchApp */,
 				B6F5E3A329CAC3EB001B7F27 /* StoreSearchAppTests */,
 				B6F5E3AD29CAC3EB001B7F27 /* StoreSearchAppUITests */,
@@ -290,7 +287,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6F5E3DD29CB3901001B7F27 /* README.md in Resources */,
 				B6F5E39B29CAC3EB001B7F27 /* Preview Assets.xcassets in Resources */,
 				B6F5E39829CAC3EB001B7F27 /* Assets.xcassets in Resources */,
 			);

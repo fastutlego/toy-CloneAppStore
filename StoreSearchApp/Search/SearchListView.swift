@@ -20,7 +20,7 @@ struct RecentSearchStore {
         return searchList
     }
 
-    static func save(keywordList: [String])  {
+    static func save(keywordList: [String]) {
         UserDefaults.standard.set(keywordList,
                                   forKey: RecentSearchStore.storedKey)
     }
@@ -79,14 +79,11 @@ struct SearchFeature: ReducerProtocol {
             }
             return .none
 
-
         }
 
     }
 
-
 }
-
 
 struct SearchListView: View {
     let store: StoreOf<SearchFeature>
@@ -127,7 +124,6 @@ struct SearchListView: View {
             }
         }
     }
-
 
 }
 
